@@ -1,0 +1,286 @@
+/* Reset + základ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to bottom right, #0b3d0b, #a8e6a3); /* Zelený gradient */
+  color: #222;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1a4d1a;
+}
+
+/* Navigace */
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: #1a4d1a;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  color: #145214;
+}
+
+/* Texty v main */
+main p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* GIF sekce */
+.gif-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.gif-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Tabulka */
+.tabulka {
+  margin-top: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #e0f2e9;
+}
+
+/* Formulář (pokud bude) */
+.formular {
+  margin-top: 60px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea, select {
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1b5e20;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #888;
+}
+/* Styl pro sekci videa */
+.video-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f0f0f5;  /* jemné šedé pozadí */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.video-section h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.video-section iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.video-section iframe:hover {
+  transform: scale(1.05);
+}
+main {
+  --font: "skolar-sans-latin", sans-serif;
+  --really-green: oklch(88.14% 0.203 158.82);
+  --green: oklch(78.59% 0.18 159.1);
+  --black: oklch(22.21% 0 0);
+  --gray: oklch(83.9% 0 0);
+  --speed: 1200ms;
+
+  height: 100%;
+  font-family: var(--font);
+  background-color: var(--black);
+  color: var(--gray);
+
+  & * {
+    font-family: inherit;
+  }
+}
+
+main {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+  gap: 88px;
+
+  & article {
+    display: grid;
+    gap: 52px;
+  }
+
+  & h1 {
+    color: var(--green);
+    font-size: 14vw;
+    font-weight: 900;
+  }
+
+  & h2 {
+    font-size: 4.5vw;
+    text-transform: uppercase;
+    letter-spacing: 0.025ch;
+  }
+}
+
+*[letter-animation="breath"] {
+  & > span {
+    display: inline-block;
+    white-space: break-spaces;
+  }
+
+  & > span {
+    animation: breath calc(var(--speed)) ease calc(var(--index) * 100 * 1ms)
+      infinite alternate;
+  }
+}
+
+section {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  place-items: center;
+
+  & div {
+    width: 50vw;
+
+    & span {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.025ch;
+      position: relative;
+      margin-block-end: 8px;
+    }
+
+    & span:first-of-type {
+      float: left;
+      left: -12px;
+    }
+
+    & span:last-of-type {
+      float: right;
+      right: -12px;
+    }
+  }
+
+  & input[type="range"] {
+    width: 100%;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--green);
+  height: 0.5rem;
+  border-radius: 12px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px;
+  background-color: oklch(22.21% 0 0);
+  border: 1px solid oklch(38% 0 0);
+  border-radius: 8px;
+  height: 2rem;
+  width: 1.25rem;
+}
+
+@keyframes breath {
+  from {
+    animation-timing-function: ease-out;
+  }
+  to {
+    transform: scale(1.25) translateY(-5px) perspective(1px);
+    text-shadow: 0 0 20px var(--really-green);
+    animation-timing-function: ease-in-out;
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulář - Pedrův ráj</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Formulář</h1>
+      <nav>
+        <a href="index.html">Domů</a> |
+        <a href="form.html">Formulář</a>
+      </nav>
+    </header>
+
+    <main>
+      <form action="insert.php" method="POST">
+        <label for="jmeno">Jméno:</label>
+        <input type="text" id="jmeno" name="jmeno" required />
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="barva">Oblíbená barva:</label>
+        <select id="barva" name="barva" required>
+          <option value="">-- Vyber barvu --</option>
+          <option value="červená">Červená</option>
+          <option value="zelená">Zelená</option>
+          <option value="modrá">Modrá</option>
+          <option value="žlutá">Žlutá</option>
+        </select>
+
+        <button type="submit">Odeslat</button>
+      </form>
+    </main>
+
+    <footer>
+      &copy; 2025 Pedrův ráj
+    </footer>
+  </div>
+</body>
+</html>
