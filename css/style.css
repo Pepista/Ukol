@@ -5,56 +5,88 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
-  font-family: sans-serif;
-  background: linear-gradient(to bottom right, #0b3d0b, #a8e6a3); /* Zelený gradient */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0b3d0b, #a8e6a3);
   color: #222;
   padding: 40px 20px;
   min-height: 100vh;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }
 
+/* Kontejnery */
 .container {
   max-width: 900px;
   margin: 0 auto;
   background: white;
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
 }
 
 /* Header */
 header {
   text-align: center;
   margin-bottom: 30px;
+  animation: fadeIn 1.5s ease-out;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #1a4d1a;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
-/* Navigace */
+header h1 span {
+  color: #2e7d32;
+}
+
 header nav {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 header nav a {
   color: #1a4d1a;
   text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-  transition: color 0.3s;
+  margin: 0 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
 }
 
 header nav a:hover {
-  text-decoration: underline;
-  color: #145214;
+  color: #fff;
+  background-color: #2e7d32;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+header nav a.active {
+  color: #fff;
+  background-color: #1a4d1a;
 }
 
 /* Texty v main */
 main p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  color: #333;
+  line-height: 1.8;
 }
 
 /* GIF sekce */
@@ -66,7 +98,14 @@ main p {
 .gif-section img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gif-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Tabulka */
@@ -78,19 +117,38 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+table:hover {
+  transform: scale(1.02);
 }
 
 th, td {
   border: 1px solid #ccc;
-  padding: 12px;
+  padding: 16px;
   text-align: left;
 }
 
 th {
   background-color: #e0f2e9;
+  font-weight: bold;
 }
 
-/* Formulář (pokud bude) */
+td {
+  background-color: #fafafa;
+}
+
+th, td {
+  transition: all 0.3s ease;
+}
+
+th:hover, td:hover {
+  background-color: #e0f2e9;
+  color: #333;
+}
+
+/* Formulář */
 .formular {
   margin-top: 60px;
 }
@@ -101,47 +159,61 @@ form {
 }
 
 input, textarea, select {
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
   font-family: inherit;
+  transition: border 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #2e7d32;
+  outline: none;
+  box-shadow: 0 0 5px rgba(46, 125, 50, 0.5);
 }
 
 button {
-  padding: 10px;
-  font-size: 1rem;
+  padding: 12px;
+  font-size: 1.1rem;
   background-color: #2e7d32;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
   background-color: #1b5e20;
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 0.9rem;
   color: #888;
 }
-/* Styl pro sekci videa */
+
+/* Videa */
 .video-section {
   margin-top: 2rem;
-  padding: 1rem;
-  background-color: #f0f0f5;  /* jemné šedé pozadí */
+  padding: 1.5rem;
+  background-color: #f0f0f5;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.video-section:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
 }
 
 .video-section h2 {
@@ -154,11 +226,53 @@ footer {
 .video-section iframe {
   width: 100%;
   height: 315px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
 .video-section iframe:hover {
   transform: scale(1.05);
+}
+
+/* Zvětšení obrázku a animace při změně */
+img {
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Styl pro sekci s obrázkem */
+.obrazek-section {
+  margin-top: 40px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Animace */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

@@ -6,6 +6,7 @@
   <title>Pedrův ráj</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -14,22 +15,25 @@
       <h1>Nazdárek zdravíčko</h1>
       <nav>
         <a href="index.html">Domů</a> |
-        <a href="form.html">Formulář</a>
+        <a href="form.html">Formulář</a> |
         <a href="bootstrap.html">Hustá animačka</a>
       </nav>
     </header>
 
     <main>
       <p>Síň Pedra Joestara</p>
-      <p>King Crimson > King Crimson Requiem</p>
+      <p>King Crimson &gt; King Crimson Requiem</p>
 
       <section class="gif-section">
-        <div class="tenor-gif-embed" data-postid="189555070225993471" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/thin-ice-jojo-diavolo-king-gif-189555070225993471">Thin Ice GIF</a>from <a href="https://tenor.com/search/thin-gifs">Thin GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <div class="tenor-gif-embed" data-postid="189555070225993471" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+          <a href="https://tenor.com/view/thin-ice-jojo-diavolo-king-gif-189555070225993471">Thin Ice GIF</a> from <a href="https://tenor.com/search/thin-gifs">Thin GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
       </section>
 
       <section class="tabulka">
         <h2>Oblíbené hry</h2>
-        <table>
+        <table id="gamesTable">
           <thead>
             <tr>
               <th>#</th>
@@ -59,14 +63,44 @@
             </tr>
           </tbody>
         </table>
+        <button onclick="pridatRadek()">Přidat řádek</button>
       </section>
 
-      <!-- Sekce s YouTube videem na Geometry Dash Limbo -->
       <section class="video-section">
         <h2>Geometry Dash Limbo - Verify</h2>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/dtKV9uSa5jQ" title="Geometry Dash Limbo - Verify" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </section>
-      
+
+      <section class="obrazek-section">
+        <p>Click the button to change the image!</p>
+        <img id="obrazek" src="img/image1.jpg" alt="Obrázek" width="500" height="auto" style="cursor:pointer;" onclick="zmenObrazek()">
+        <button onclick="zmenObrazek()">Změnit obrázek</button>
+      </section>
+
+      <section class="text-change-section">
+        <button onclick="zmenText()">Klikni pro změnu textu</button>
+        <p id="demo">Původní text</p>
+      </section>
+
+      <section class="hide-text-section">
+        <button onclick="schovejText()">Schovej text</button>
+        <p id="text">Tento text zmizí po kliknutí.</p>
+      </section>
+
+      <section class="form-section">
+        <h2>Formulář</h2>
+        <form onsubmit="return kontrolaFormulare()">
+          <input type="text" id="jmeno" placeholder="Zadej jméno" required />
+          <input type="email" id="email" placeholder="Zadej e-mail" required />
+          <input type="password" id="heslo" placeholder="Zadej heslo" minlength="6" required />
+          <input type="submit" value="Odeslat" />
+        </form>
+      </section>
+
+      <section class="scroll-info-section">
+        <p id="scroll-info">Aktuální pozice scrollu: 0px</p>
+      </section>
+
     </main>
 
     <footer>
