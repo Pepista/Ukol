@@ -72,20 +72,15 @@
       </section>
 
       <section class="obrazek-section">
-        <p>Click the button to change the image!</p>
+        <p>Klikni na obrázek a změň ho!</p>
         <img id="obrazek" src="img/image1.jpg" alt="Obrázek" width="500" height="auto" style="cursor:pointer;" onclick="zmenObrazek()">
-        <button onclick="zmenObrazek()">Změnit obrázek</button>
+        
       </section>
 
-      <section class="text-change-section">
-        <button onclick="zmenText()">Klikni pro změnu textu</button>
-        <p id="demo">Původní text</p>
-      </section>
-
-      <section class="hide-text-section">
-        <button onclick="schovejText()">Schovej text</button>
-        <p id="text">Tento text zmizí po kliknutí.</p>
-      </section>
+      <button id="scrollUpButton" onclick="scrollNahoru()" style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px;">
+        Nahoru
+    </button>
+    
 
       <section class="form-section">
         <h2>Formulář</h2>
